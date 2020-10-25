@@ -1,0 +1,34 @@
+.pricing {
+    color: var(--grayish-blue);
+    &__period {
+        color: var(--light-grayish-blue);
+        display: flex;
+        align-items: center;
+    }
+    .check-toggle {
+        display: none;
+    }
+    .label-toggle {
+        display: inline-flex;
+        align-items: center;
+        background-image: var(--linear-gradient);
+        width: 56px;
+        height: 32px;
+        border-radius: 1rem;
+        padding: 4px;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            border-radius: 50%;
+            right: -24px;
+        }
+    }
+    .check-toggle:checked + .label-toggle::before {
+        right: 0;
+    }
+}

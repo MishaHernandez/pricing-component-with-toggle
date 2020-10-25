@@ -359,6 +359,41 @@ body {
   --dark-grayish-blue: hsl(232, 13%, 33%);
 }
 
+.pricing {
+  color: var(--grayish-blue);
+}
+.pricing__period {
+  color: var(--light-grayish-blue);
+  display: flex;
+  align-items: center;
+}
+.pricing .check-toggle {
+  display: none;
+}
+.pricing .label-toggle {
+  display: inline-flex;
+  align-items: center;
+  background-image: var(--linear-gradient);
+  width: 56px;
+  height: 32px;
+  border-radius: 1rem;
+  padding: 4px;
+  position: relative;
+}
+.pricing .label-toggle::before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  right: -24px;
+}
+.pricing .check-toggle:checked + .label-toggle::before {
+  right: 0;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
