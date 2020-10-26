@@ -1,34 +1,58 @@
 .pricing {
     color: var(--grayish-blue);
+    &__title {
+        margin-bottom: 2.5rem;
+    }
     &__period {
+        max-width: 241px;
         color: var(--light-grayish-blue);
         display: flex;
+        justify-content: space-between;
         align-items: center;
-    }
-    .check-toggle {
-        display: none;
-    }
-    .label-toggle {
-        display: inline-flex;
-        align-items: center;
-        background-image: var(--linear-gradient);
-        width: 56px;
-        height: 32px;
-        border-radius: 1rem;
-        padding: 4px;
-        position: relative;
-        &::before {
-            content: "";
-            display: block;
-            position: relative;
-            width: 24px;
-            height: 24px;
-            background-color: #fff;
-            border-radius: 50%;
-            right: -24px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5rem;
+        @include desktop {
+            margin-bottom: 4.2rem;
         }
     }
-    .check-toggle:checked + .label-toggle::before {
-        right: 0;
+}
+.check-toggle {
+    display: none;
+}
+.label-toggle {
+    display: inline-flex;
+    align-items: center;
+    background-image: var(--linear-gradient);
+    width: 56px;
+    height: 32px;
+    border-radius: 1rem;
+    padding: 4px;
+    position: relative;
+    cursor: pointer;
+    @include desktop {
+         &:hover {
+            background-image: none;
+            background-color: rgba(163, 168, 240, .6); }
     }
+    &::before {
+        content: "";
+        display: block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        background-color: #fff;
+        border-radius: 50%;
+        right: -24px;
+        transition: right .3s;
+    }
+}
+.check-toggle:checked ~ * .label-toggle::before {
+    right: 0;
+}
+.check-toggle:checked ~ * .card__paragraph-year {
+    display: block;
+}
+.check-toggle:checked ~ * .card__paragraph-month {
+    display: none;
 }
